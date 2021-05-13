@@ -358,7 +358,7 @@ def generator():
                 part4 = ""
         case 16:
             generator()
-        case 16:
+        case 17:
             exit()
     selexit = input('\n' + colored(" [Y/N]", "green") + " DO YOU WANT TO GENERATE MORE?: ")
     match selexit:
