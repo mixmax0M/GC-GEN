@@ -1,7 +1,5 @@
-import math
-
 from termcolor import colored
-import os, random, time
+import os, random, time, keyboard
 from math import *
 
 class bcolors:
@@ -22,6 +20,7 @@ def generator():
     cls()
     code = ""
     chars = "ABCDEFGHIJKLNMOPQRSTUVWXYZ1234567890"
+    nums = "1234567890"
 
     part1 = ""
     part2 = ""
@@ -44,6 +43,7 @@ def generator():
     print(colored(" |__/     |__/|__/     |__/|__/  |__/      |________/|__/  \__/ \______/ |______/|__/  \__/|________/", "cyan"))
     print("\n")
     print(colored(" [*] ", "green") + "WHAT KIND OF CODES DO YOU WANT TO GENERATE?")
+    print(colored(" [*] ", "green") + "PRESS 'N' TO STOP THE GENERATION PROCESS!")
     print("\n")
     print(colored(" [1] ", "green") + " PSN BALANCE")
     print(colored(" [2] ", "green") + " PS PLUS")
@@ -58,7 +58,9 @@ def generator():
     print(colored(" [11]", "green") + " STEAM GAMES")
     print(colored(" [12]", "green") + " STEAM WALLET CODES")
     print(colored(" [13]", "green") + " WINDOWS PRO KEYS")
-    print(colored(" [14] EXIT", "red"))
+    print(colored(" [14]", "green") + " ROBLOX GIFT CARDS")
+    print(colored(" [15]", "green") + " PAYSAFECARD")
+    print(colored(" [16] EXIT", "red"))
     print("\n")
 
     greendot = colored("[*]", "green")
@@ -69,6 +71,11 @@ def generator():
         case 1: # PSN
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -81,6 +88,11 @@ def generator():
         case 2: # PSN
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -93,6 +105,11 @@ def generator():
         case 3: # XBOX
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(5):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -109,6 +126,11 @@ def generator():
         case 4: # XBOX
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(5):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -125,6 +147,11 @@ def generator():
         case 5: # NINTENDO
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -138,12 +165,18 @@ def generator():
                 part4 = ""
         case 6: # NINTENDO
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            nin = "ACDEFGHJKLNMPQRSTUVWXY1234567890"
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
-                    part1 = part1 + random.choice(chars)
-                    part2 = part2 + random.choice(chars)
-                    part3 = part3 + random.choice(chars)
-                    part4 = part4 + random.choice(chars)
+                    part1 = part1 + random.choice(nin)
+                    part2 = part2 + random.choice(nin)
+                    part3 = part3 + random.choice(nin)
+                    part4 = part4 + random.choice(nin)
                 print(colored(f'{part1} {part2} {part3} {part4}, "green'))
                 count = count + 1
                 part1 = ""
@@ -153,6 +186,11 @@ def generator():
         case 7: # APPLE
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 part1 = "X"
                 for i in range(4):
                     part2 = part2 + random.choice(chars)
@@ -169,6 +207,11 @@ def generator():
         case 8: # GOOGLE PLAY
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -185,6 +228,11 @@ def generator():
         case 9: # AMAZON
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(4):
                     part1 = part1 + random.choice(chars)
                 for i in range(6):
@@ -199,6 +247,11 @@ def generator():
         case 10: # Neflix
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(11):
                     part1 = part1 + random.choice(chars)
                 print(colored(f'{part1}', "green"))
@@ -207,6 +260,11 @@ def generator():
         case 11: # Steam
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(5):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -223,6 +281,11 @@ def generator():
         case 12: # Steam
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(5):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -237,6 +300,11 @@ def generator():
         case 13: # WINDOWS
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
                 for i in range(5):
                     part1 = part1 + random.choice(chars)
                     part2 = part2 + random.choice(chars)
@@ -250,7 +318,44 @@ def generator():
                 part3 = ""
                 part4 = ""
                 part5 = ""
-        case 14:
+        case 14: # ROBLOX
+            ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
+                for i in range(3):
+                    part1 = part1 + random.choice(nums)
+                    part2 = part2 + random.choice(nums)
+                for i in range(4):
+                    part3 = part3 + random.choice(nums)
+                print(colored(f'{part1} {part2} {part3}', "green"))
+                count = count + 1
+                part1 = ""
+                part2 = ""
+                part3 = ""
+        case 15: # PSC
+            ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
+                for i in range(4):
+                    part1 = part1 + random.choice(nums)
+                    part2 = part2 + random.choice(nums)
+                    part3 = part3 + random.choice(nums)
+                    part4 = part4 + random.choice(nums)
+                print(colored(f'{part1} {part2} {part3} {part4}', "green"))
+                count = count + 1
+                part1 = ""
+                part2 = ""
+                part3 = ""
+                part4 = ""
+        case 16:
             exit()
     selexit = input('\n' + colored(" [Y/N]", "green") + " DO YOU WANT TO GENERATE MORE?: ")
     match selexit:
