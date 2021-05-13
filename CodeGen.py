@@ -60,7 +60,8 @@ def generator():
     print(colored(" [13]", "green") + " WINDOWS PRO KEYS")
     print(colored(" [14]", "green") + " ROBLOX GIFT CARDS")
     print(colored(" [15]", "green") + " PAYSAFECARD")
-    print(colored(" [16] EXIT", "red"))
+    print(colored(" [16] RESTART", "green"))
+    print(colored(" [17] EXIT", "red"))
     print("\n")
 
     greendot = colored("[*]", "green")
@@ -355,6 +356,8 @@ def generator():
                 part2 = ""
                 part3 = ""
                 part4 = ""
+        case 16:
+            generator()
         case 16:
             exit()
     selexit = input('\n' + colored(" [Y/N]", "green") + " DO YOU WANT TO GENERATE MORE?: ")
