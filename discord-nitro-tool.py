@@ -13,13 +13,13 @@ f = open("proxies.txt", "a")
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-def getProxies():
-    r = requests.get('https://free-proxy-list.net/')
+def getProxies(url):
+    r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
     table = soup.find('tbody')
     proxies = []
     for row in table:
-        if row.find_all('td')[4].text =='elite proxy':
+        if row.find_all('td')[4].text =='HTTP' or 'HTTPS':
             proxy = ':'.join([row.find_all('td')[0].text, row.find_all('td')[1].text])
             proxies.append(proxy)
         else:
@@ -127,7 +127,6 @@ def generator():
                     lines = f.readlines()
                     count = 0
                     selection = 1
-
                     for line in lines:
                         try:
                             if keyboard.is_pressed('s'):
@@ -160,6 +159,7 @@ def generator():
                             timeout = timeout + 1
                 case "y":
                     while proxy == "y" or "Y":
+                        
                         try:
                             if keyboard.is_pressed('s'):
                                 break
@@ -168,7 +168,20 @@ def generator():
                         f = open("codes.txt", "r")
                         pr = open("proxies.txt", "r")
                         lines = f.readlines()
-                        proxyfg = pr.readlines()
+                        proxyfg = ""
+                        print(colored(" [1] ", "green") + " API")
+                        print(colored(" [2] ", "green") + " FILE")
+                        print("\n")
+                        prxsell = int(input(greendot + " SELECTION: "))
+                        match prxsell:
+                            case 1:
+                                smol_list = ["https://free-proxy-list.net/", "https://www.netzwelt.de/proxy/index.html/"]
+                                for ads in smol_list:
+                                    dalist = getProxies(ads)
+                                    for element in dalist:
+                                        proxyfg = proxyfg + "\n" + element
+                            case 2:
+                                proxyfg = pr.readlines()
                         count = 0
                         selection = 1
                         tmot = int(input(" " + greendot + " TIMEOUT IN S: "))
@@ -211,6 +224,7 @@ def generator():
                                     pass
                 case "Y":
                     while proxy == "y" or "Y":
+                        
                         try:
                             if keyboard.is_pressed('s'):
                                 break
@@ -219,7 +233,18 @@ def generator():
                         f = open("codes.txt", "r")
                         pr = open("proxies.txt", "r")
                         lines = f.readlines()
-                        proxyfg = pr.readlines()
+                        proxyfg = ""
+                        print(colored(" [1] ", "green") + " API")
+                        print(colored(" [2] ", "green") + " FILE")
+                        print("\n")
+                        prxsell = int(input(greendot + " SELECTION: "))
+                        match prxsell:
+                            case 1:
+                                dalist = getProxies("https://free-proxy-list.net/")
+                                for element in dalist:
+                                    proxyfg = proxyfg + "\n" + element
+                            case 2:
+                                proxyfg = pr.readlines()
                         count = 0
                         selection = 1
                         tmot = int(input(" " + greendot + " TIMEOUT IN S: "))
