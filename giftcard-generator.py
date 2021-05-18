@@ -60,8 +60,9 @@ def generator():
     print(colored(" [13]", "green") + " WINDOWS PRO KEYS")
     print(colored(" [14]", "green") + " ROBLOX GIFT CARDS")
     print(colored(" [15]", "green") + " PAYSAFECARD")
-    print(colored(" [16] RESTART", "green"))
-    print(colored(" [17] EXIT", "red"))
+    print(colored(" [16]", "green") + " VBUCKS CARDS")
+    print(colored(" [17] RESTART", "green"))
+    print(colored(" [18] EXIT", "red"))
     print("\n")
 
     greendot = colored("[*]", "green")
@@ -356,9 +357,28 @@ def generator():
                 part2 = ""
                 part3 = ""
                 part4 = ""
-        case 16:
-            generator()
+        case 16: # VBUCKS
+            ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
+                for i in range(4):
+                    part1 = part1 + random.choice(chars)
+                    part2 = part2 + random.choice(chars)
+                    part3 = part3 + random.choice(chars)
+                    part4 = part4 + random.choice(chars)
+                print(colored(f'{part1}-{part2}-{part3}-{part4}', "green"))
+                count = count + 1
+                part1 = ""
+                part2 = ""
+                part3 = ""
+                part4 = ""
         case 17:
+            generator()
+        case 18:
             exit()
     selexit = input('\n' + colored(" [Y/N]", "green") + " DO YOU WANT TO GENERATE MORE?: ")
     match selexit:
