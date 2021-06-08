@@ -30,6 +30,8 @@ def generator():
     part6 = ""
     part7 = ""
     part8 = ""
+    part9 = ""
+    part10 = ""
 
 
     count = 0
@@ -57,12 +59,14 @@ def generator():
     print(colored(" [10]", "green") + " NEFLIX GIFT")
     print(colored(" [11]", "green") + " STEAM GAMES")
     print(colored(" [12]", "green") + " STEAM WALLET CODES")
-    print(colored(" [13]", "green") + " WINDOWS PRO KEYS")
-    print(colored(" [14]", "green") + " ROBLOX GIFT CARDS")
-    print(colored(" [15]", "green") + " PAYSAFECARD")
-    print(colored(" [16]", "green") + " VBUCKS CARDS")
-    print(colored(" [17] RESTART", "green"))
-    print(colored(" [18] EXIT", "red"))
+    print(colored(" [13]", "green") + " STEAM BALANCE AND GAMES")
+    print(colored(" [14]", "green") + " WINDOWS PRO KEYS")
+    print(colored(" [15]", "green") + " ROBLOX GIFT CARDS")
+    print(colored(" [16]", "green") + " PAYSAFECARD")
+    print(colored(" [17]", "green") + " VBUCKS CARDS")
+    print(colored(" [18]", "green") + " GENSHIN IMPACT GIFTS")
+    print(colored(" [19] RESTART", "green"))
+    print(colored(" [20] EXIT", "red"))
     print("\n")
 
     greendot = colored("[*]", "green")
@@ -259,7 +263,7 @@ def generator():
                 print(colored(f'{part1}', "green"))
                 count = count + 1
                 part1 = ""
-        case 11: # Steam
+        case 11: # Steam cards
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -280,7 +284,7 @@ def generator():
                 part3 = ""
                 part4 = ""
                 part5 = ""
-        case 12: # Steam
+        case 12: # Steam games
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -294,12 +298,56 @@ def generator():
                     part3 = part3 + random.choice(chars)
                     part4 = part4 + random.choice(chars)
                     part5 = part5 + random.choice(chars)
+                    part6 = part6 + random.choice(chars)
+                    part7 = part7 + random.choice(chars)
+                    part8 = part8 + random.choice(chars)
+                    part9 = part9 + random.choice(chars)
+                    part10 = part10 + random.choice(chars)
                 print(colored(f'{part1}-{part2}-{part3}', "green"))
                 count = count + 1
                 part1 = ""
                 part2 = ""
                 part3 = ""
-        case 13: # WINDOWS
+                part4 = ""
+                part5 = ""
+                part6 = ""
+                part7 = ""
+                part8 = ""
+                part9 = ""
+                part10 = ""
+        case 13: # Steam cards and games
+            ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
+                for i in range(5):
+                    part1 = part1 + random.choice(chars)
+                    part2 = part2 + random.choice(chars)
+                    part3 = part3 + random.choice(chars)
+                    part4 = part4 + random.choice(chars)
+                    part5 = part5 + random.choice(chars)
+                    part6 = part6 + random.choice(chars)
+                    part7 = part7 + random.choice(chars)
+                    part8 = part8 + random.choice(chars)
+                    part9 = part9 + random.choice(chars)
+                    part10 = part10 + random.choice(chars)
+                print(colored(f'{part1}-{part2}-{part3}', "green"))
+                print(colored(f'{part4}-{part5}-{part6}-{part7}-{part8}', "green"))
+                count = count + 1
+                part1 = ""
+                part2 = ""
+                part3 = ""
+                part4 = ""
+                part5 = ""
+                part6 = ""
+                part7 = ""
+                part8 = ""
+                part9 = ""
+                part10 = ""
+        case 14: # WINDOWS
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -320,7 +368,7 @@ def generator():
                 part3 = ""
                 part4 = ""
                 part5 = ""
-        case 14: # ROBLOX
+        case 15: # ROBLOX
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -338,7 +386,7 @@ def generator():
                 part1 = ""
                 part2 = ""
                 part3 = ""
-        case 15: # PSC
+        case 16: # PSC
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -357,7 +405,7 @@ def generator():
                 part2 = ""
                 part3 = ""
                 part4 = ""
-        case 16: # VBUCKS
+        case 17: # VBUCKS
             ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
             while count != ammount:
                 try:
@@ -376,9 +424,22 @@ def generator():
                 part2 = ""
                 part3 = ""
                 part4 = ""
-        case 17:
+        case 18: # VBUCKS
+            ammount = int(input('\n ' + greendot + ' HOW MANY CODES DO YOU WANT TO GENERATE?: '))
+            while count != ammount:
+                try:
+                    if keyboard.is_pressed('n'):
+                        break
+                except:
+                    break
+                for i in range(12):
+                    part1 = part1 + random.choice(chars)
+                print(colored(f'{part1}', "green"))
+                count = count + 1
+                part1 = ""
+        case 19:
             generator()
-        case 18:
+        case 20:
             exit()
     selexit = input('\n' + colored(" [Y/N]", "green") + " DO YOU WANT TO GENERATE MORE?: ")
     match selexit:
