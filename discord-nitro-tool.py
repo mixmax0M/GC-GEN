@@ -1,5 +1,5 @@
 from termcolor import colored
-import os, random, time, keyboard, requests, selenium, json, string
+import os, random, time, keyboard, requests
 import subprocess as sp
 from bs4 import BeautifulSoup
 from math import *
